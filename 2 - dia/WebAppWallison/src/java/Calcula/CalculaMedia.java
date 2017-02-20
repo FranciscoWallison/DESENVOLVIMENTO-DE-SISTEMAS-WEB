@@ -30,7 +30,11 @@ public class CalculaMedia extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String numero = request.getParameter("valorA");
+        String numero1 = request.getParameter("valorA");
+        String numero2 = request.getParameter("valorB");
+        int num1 = Integer.parseInt(numero1);
+        int num2 = Integer.parseInt(numero2);
+        int valor = num1*num2/2;
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -40,7 +44,7 @@ public class CalculaMedia extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             //out.println("<h1>Servlet CalculaMedia at " + request.getContextPath() + "</h1>");
-            out.println("<h1>Servlet CalculaMedia at " + numero + "</h1>");
+            out.println("<h1>Calcular = " + valor + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
