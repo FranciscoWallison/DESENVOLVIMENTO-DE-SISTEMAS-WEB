@@ -32,19 +32,32 @@ public class CalculaMedia extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String numero1 = request.getParameter("valorA");
         String numero2 = request.getParameter("valorB");
-        int num1 = Integer.parseInt(numero1);
-        int num2 = Integer.parseInt(numero2);
-        int valor = num1*num2/2;
+        double media = ( Double.parseDouble(numero1)+ Double.parseDouble(numero2))/2 ;
+        
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code.
+                Circlo de vida do Servlet
+                init(), service() e destroy(),
+            */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CalculaMedia</title>");            
+            out.println("<title>Servlet CalculaMedia</title>");     
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">");     
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\" integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">");   
             out.println("</head>");
             out.println("<body>");
-            //out.println("<h1>Servlet CalculaMedia at " + request.getContextPath() + "</h1>");
-            out.println("<h1>Calcular = " + valor + "</h1>");
+            out.println("<div class=\"page-header \" >");
+                out.println("<div class=\"container \">");
+                    out.println("<div class=\"row  \">");
+                        out.println("<div class=\"jumbotron\">");
+                            out.println("<h2> <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> Valor 1  = " + numero1 + " <span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span> Valor 2 ="+ numero2 +"</h2>");
+                            out.println("<h1> <span class=\"glyphicon glyphicon-education\" aria-hidden=\"true\"></span> Calcular Media = " + media + "</h1>");
+                        out.println("</div>");
+                    out.println("</div>");
+                out.println("</div>");
+            out.println("</div>");
+            out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>");  
             out.println("</body>");
             out.println("</html>");
         }
