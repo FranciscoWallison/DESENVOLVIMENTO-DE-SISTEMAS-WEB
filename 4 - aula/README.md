@@ -9,4 +9,70 @@
 				rd.forward(request, response);
 
     * Atributo 
-	
+    
+    
+    
+  Exeicio 
+    CREATE TABLE paciente (
+idPaciente INT NOT NULL PRIMARY KEY,
+nomePaciente VARCHAR(100) NOT NULL,
+nomeCidade VARCHAR(100) NOT NULL DEFAULT 'Nao Informado'
+);
+
+CREATE TABLE medico (
+idMedico INT NOT NULL PRIMARY KEY,
+nomeMedico VARCHAR(100) NOT NULL DEFAULT 'Nao Informado',
+hospital VARCHAR(100) NOT NULL DEFAULT 'Nao Informado'
+);
+
+CREATE TABLE consulta(
+idConsulta INT NOT NULL PRIMARY KEY,
+idMedico INT NOT NULL REFERENCES medico ( idMedico )
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+idPaciente INT NOT NULL REFERENCES paciente ( idPaciente )
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+dataConsulta TIMESTAMP NOT NULL CHECK ( dataConsulta >= CURRENT_DATE )
+);
+
+CREATE TABLE receita(
+idReceita INT NOT NULL,
+idConsulta INT NOT NULL REFERENCES consulta (idConsulta)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+nomeMedicamento VARCHAR(100) NOT NULL,
+PRIMARY KEY (idReceita, idConsulta)
+);
+
+Execicio 
+create table categoria (
+	codigo int not null primary key,
+	descricao varchar(100) not null
+);
+
+create table filme (
+	codigo int not null primary key,
+	nome varchar(100) not null,
+	categoria_codigo int not null references categoria (codigo)
+		on delete restrict
+		on update cascade,
+	nacional boolean not null default false
+);
+
+create table prateleira (
+	codigo int not null primary key,
+	descricao varchar(100) not null,
+	altura int not null default 100,
+	capacidade int not null default 0
+);
+
+create table dvd (
+	codigo int not null primary key,
+	filme_codigo int not null references filme (codigo)
+		on delete cascade
+		on update cascade,
+	prateleira_codigo int references prateleira (codigo)
+		on delete restrict
+		on update restrict
+);
