@@ -126,6 +126,97 @@ V.
 ALTER TABLE Funcionarios DROP PRIMARY KEY;
 
 
+VI.
+
+AT-2
+
+ALTER TABLE Funcionarios ALTER COLUMN CPF PRIMARY KEY;
+ALTER TABLE Funcionarios DROP COLUMN cod;
+
+
+create table ator (
+	cod_ator int not null primary key,
+	nome_ator varchar(100) not null
+);
+
+create table genero (
+	cod_genero int not null primary key,
+	descr_genero varchar(100) not null
+);
+
+create table categoria (
+	cod_cat int not null primary key,
+	descr_cat varchar(100) not null
+);
+
+create table cliente (
+	cod_cli int not null primary key,
+	nome_cli varchar(100) not null,
+	end_cli varchar(100) not null,
+	cidade_cli varchar(100) not null,
+	uf_cli varchar(100) not null,
+	fone_cli varchar(100) not null,
+	cpf_cli varchar(100)  not null,
+	rg_cli varchar(100)  not null,
+	UNIQUE (cpf_cli , rg_cli)
+);
+
+
+create table autorizado (
+	cod_aut int not null primary key,
+	nome_aut varchar(100) not null,
+	cod_cli int not null references cliente (cod_cli)
+		on delete restrict
+		on update cascade,
+);
+
+
+create table filme (
+	cod_filme int not null primary key,
+	nome_filme varchar(100) not null,
+	cod_cat int not null references categoria (cod_cat)
+		on delete restrict
+		on update cascade,
+	cod_gen int not null references genero (cod_gen)
+		on delete restrict
+		on update cascade,
+	nome_diretor varchar(100) not null,
+);
+
+create table ator_filme (
+	cod_ator int not null primary key,
+	cod_filme int not null references filme (cod_filme)
+		on delete restrict
+		on update cascade,
+);
+
+create table midia (
+	cod_midia int not null primary key,
+	cod_filme int not null references filme (cod_filme)
+		on delete restrict
+		on update cascade,
+	tipo_midia varchar(100) not null,
+	formato varchar(100) not null,
+	idioma varchar(100) not null,
+);
+
+create table locacao (
+	cod_loc int not null primary key,
+	data timestamp not null check (data >=  data_loc),
+	cod_cli int not null references cliente (cod_cli)
+		on delete restrict
+		on update cascade,
+);
+
+create table midia_locacao (
+	cod_midia int not null primary key,
+	cod_loc int not null references locacao (cod_loc)
+		on delete restrict
+		on update cascade,
+	idioma varchar(100) not null,
+	valor_locacao double DEFAULT NULL,
+	data timestamp not null check (data >=   data_devolucao),
+);
 ```
 
 
