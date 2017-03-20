@@ -1,9 +1,10 @@
 <%-- 
     Document   : dListarCandidatos
     Created on : 15/03/2017, 19:53:16
-    Author     : EstÃ¡cio
+    Author     : Estácio
 --%>
 
+<%@page import="br.estacio.eleicao.modelo.DCandidato"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
