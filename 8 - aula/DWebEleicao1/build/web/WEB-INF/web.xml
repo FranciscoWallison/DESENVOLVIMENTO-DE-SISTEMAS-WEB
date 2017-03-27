@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>DRegistrarVoto</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.DRegistrarVoto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DConfirmarVoto</servlet-name>
+        <jsp-file>/jsp/dconfirmarvoto.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>DListarCandidatos</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.DListarCandidatos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DRegistrarVoto</servlet-name>
+        <url-pattern>/dRegistrarVoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DConfirmarVoto</servlet-name>
+        <url-pattern>/dConfirmarVoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DListarCandidatos</servlet-name>
+        <url-pattern>/dListarCandidatos</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+         </session-timeout>
+    </session-config>
+</web-app>

@@ -24,3 +24,7 @@
 		return c;
 	}
 	```
+## javaDB
+	1- PROJETO -> PROPRIEDADE -> BIBLIOTECAS -> ADICIONAR JAR/PASTA -> ``` PROCURAR PASTA GLASS ```
+	2- SEVIÇOS -> JAVA DB -> PROPRIEDADE -> INSTALAÇÃO DE JAVA DB " PROCURAR PASTA ``` C:\Program Files\glassfish-4.1.1\javadb``` "
+	3- CONECTAR ``` JDBC:DERBY ```  
