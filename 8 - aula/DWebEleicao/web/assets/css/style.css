@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 @font-face {
-     font-family: BrushScript;
+     font-family: brushscript;
      src: url('../fonts/BrushScriptStd.otf');
 }
 
@@ -17,7 +17,8 @@ and open the template in the editor.
   border-radius: 0 3rem;
 }
 .logo{
-   font-style: BrushScript ;
+   font-family: brushscript;
+   font-size: 55px;
 }
 
     
