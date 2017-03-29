@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ARegistrarVoto</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.ARegistrarVoto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AConfirmarVotoJSP</servlet-name>
+        <jsp-file>/jsp/aconfirmarvoto.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AListarCandidatos</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.AListarCandidatos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AConfirmarVoto</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.AConfirmarVoto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ARegistrarVoto</servlet-name>
+        <url-pattern>/aRegistrarVoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AListarCandidatos</servlet-name>
+        <url-pattern>/aListarCandidatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AConfirmarVotoJSP</servlet-name>
+        <url-pattern>/aConfirmarVotoJSP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AConfirmarVoto</servlet-name>
+        <url-pattern>/aConfirmarVoto</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
