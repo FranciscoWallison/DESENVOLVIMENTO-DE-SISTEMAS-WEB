@@ -5,7 +5,7 @@
  */
 package br.estacio.eleicao.servlets;
 
-import br.estacio.eleicao.modelo.DCandidato;
+import br.estacio.eleicao.modelo.ACandidato;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author daniel
  */
-public class DListarCandidatos extends HttpServlet {
+public class AListarCandidatos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +32,7 @@ public class DListarCandidatos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        List lista = DCandidato.getCandidatos();
+        List lista = ACandidato.getCandidatos();
         
         request.setAttribute("dLista", lista);
         

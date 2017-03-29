@@ -1,9 +1,9 @@
-<%@page import="br.estacio.eleicao.modelo.DCandidato"%>
+<%@page import="br.estacio.eleicao.modelo.ACandidato"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    List<DCandidato> dLista = (List)request.getAttribute("dLista");
+    List<ACandidato> ALista = (List)request.getAttribute("Lista");
     
 %>
 
@@ -16,11 +16,11 @@
     <body>
        <table>
           <% 
-              for (DCandidato candidato:dLista) {
+              for (ACandidato candidato:ALista) {
            %>    
            <tr>
                <td><%= candidato.getNome() %></td>
-               <td><%= candidato.getNumero() %></td>
+               <td><%= candidato.getId() %></td>
            </tr>
            <% } %>
           

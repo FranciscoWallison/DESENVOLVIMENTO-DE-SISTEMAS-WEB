@@ -5,7 +5,7 @@
  */
 package br.estacio.eleicao.servlets;
 
-import br.estacio.eleicao.modelo.DCandidato;
+import br.estacio.eleicao.modelo.ACandidato;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author daniel
  */
-public class DConfirmarVoto extends HttpServlet {
+public class AConfirmarVoto extends HttpServlet {
 
    
     @Override
@@ -28,10 +28,10 @@ public class DConfirmarVoto extends HttpServlet {
             throws ServletException, IOException {
         try {
             int numero = Integer.parseInt(request.getParameter("numero"));
-            DCandidato.registrarVoto(numero);
-            response.sendRedirect("dVotoConfirmado.html");
+            ACandidato.registrarVoto(numero);
+            response.sendRedirect("aVotoConfirmado.html");
         } catch (SQLException ex) {
-            Logger.getLogger(DConfirmarVoto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AConfirmarVoto.class.getName()).log(Level.SEVERE, null, ex);
         }
        
     }

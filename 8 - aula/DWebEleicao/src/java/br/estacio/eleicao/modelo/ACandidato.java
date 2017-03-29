@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 
-public class DCandidato {
+public class ACandidato {
 
     private String nome;
     private String avatar;
     private int id;
 
-    public DCandidato(String nome, int id, String avatar) {
+    public ACandidato(String nome, int id, String avatar) {
         this.nome = nome;
         this.id = id;
         this.avatar = avatar;
@@ -40,10 +40,10 @@ public class DCandidato {
         this.id = id;
     }
 
-    public static DCandidato getCandidato(int id) throws SQLException {
+    public static ACandidato getCandidato(int id) throws SQLException {
 
         Connection c = null;
-        DCandidato candidato = null;
+        ACandidato candidato = null;
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             c = DriverManager.getConnection(
@@ -60,7 +60,7 @@ public class DCandidato {
             ResultSet res = trans.executeQuery(query);
 
             if (res.next()) {
-              candidato = new DCandidato(res.getString("nome"),id,res.getString("avatar"));                
+              candidato = new ACandidato(res.getString("nome"),id,res.getString("avatar"));                
             } 
             res.close();
             c.close();
@@ -97,7 +97,7 @@ public class DCandidato {
 
         List lista = new ArrayList();
         for (int i = 0; i < 10; i++) {
-            DCandidato dCandidato = new DCandidato("Candidato" + Integer.toString(i), i,"Candidato" + Integer.toString(i));
+            ACandidato dCandidato = new ACandidato("Candidato" + Integer.toString(i), i,"Candidato" + Integer.toString(i));
             lista.add(dCandidato);
         }
         return lista;

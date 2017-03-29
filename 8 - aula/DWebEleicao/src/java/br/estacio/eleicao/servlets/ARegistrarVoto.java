@@ -1,6 +1,6 @@
 package br.estacio.eleicao.servlets;
 
-import br.estacio.eleicao.modelo.DCandidato;
+import br.estacio.eleicao.modelo.ACandidato;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author daniel
  */
-public class DRegistrarVoto extends HttpServlet {
+public class ARegistrarVoto extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,13 +31,13 @@ public class DRegistrarVoto extends HttpServlet {
       
         try {
             String voto = request.getParameter("dvoto");
-            DCandidato cand = DCandidato.getCandidato(Integer.parseInt(voto));
+            ACandidato cand = ACandidato.getCandidato(Integer.parseInt(voto));
             request.setAttribute("candidato", cand);
             
-            RequestDispatcher rd = request.getRequestDispatcher("/dConfirmarVotoJSP");
+            RequestDispatcher rd = request.getRequestDispatcher("/aConfirmarVotoJSP");
             rd.forward(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(DRegistrarVoto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ARegistrarVoto.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

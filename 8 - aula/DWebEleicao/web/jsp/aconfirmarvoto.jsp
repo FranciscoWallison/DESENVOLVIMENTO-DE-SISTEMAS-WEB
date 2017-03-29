@@ -1,7 +1,7 @@
-<%@page import="br.estacio.eleicao.modelo.DCandidato"%>
+<%@page import="br.estacio.eleicao.modelo.ACandidato"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
- DCandidato candidato = (DCandidato)request.getAttribute("candidato");
+ ACandidato candidato = (ACandidato)request.getAttribute("candidato");
  String nomeCandidato = null;
 
  if (candidato != null) {
@@ -45,7 +45,7 @@
                 <a class="nav-link active" href="index">Home</a>
                 <a class="nav-link" href="#">Login</a>
                 <a class="nav-link" href="#">Register</a>
-                <a class="nav-link" href="dListarCandidatos" >Candidatos</a>
+                <a class="nav-link" href="aListarCandidatos" >Candidatos</a>
               </nav>
             </div>
           </div>
@@ -55,7 +55,7 @@
             <p class="lead cover-heading">Confirme seu voto:</p>
             
             <p class="lead">
-                <form method="post" action="dConfirmarVoto" >
+                <form method="post" action="aConfirmarVoto" >
                     <input type="hidden" name="numero" class="btn btn-lg vote btn-secondary" value="<%= candidato.getId()  %>">  
                     <input type="submit" class="btn btn-lg vote btn-secondary" value='Confirmar' /><br><br>
                 </form>
