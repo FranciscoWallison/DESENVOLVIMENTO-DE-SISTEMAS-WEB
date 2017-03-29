@@ -1,20 +1,6 @@
-<%@page import="br.estacio.eleicao.modelo.DCandidato"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
- DCandidato candidato = (DCandidato)request.getAttribute("candidato");
- String nomeCandidato = null;
-
- if (candidato != null) {
-     nomeCandidato = candidato.getNome();
-     nomeCandidato = candidato.getNome();
- } else {
-     nomeCandidato = "Candidato nao encontrado!";
- }
-%>       
-
 <!DOCTYPE html>
-<html>
-<head>
+<html >
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -30,8 +16,10 @@
     <link href="assets/css/cover.css" rel="stylesheet">
     
     <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body>
+  </head>
+
+  <body>
+
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
@@ -50,20 +38,16 @@
             </div>
           </div>
           <div class="inner cover">
-            <h1 class="cover-heading"><%= nomeCandidato %></h1>
-            <img class="rounded-circle" src="img/<%= candidato.getAvatar()  %>" alt="Generic placeholder image" width="140" height="140">
-            <p class="lead cover-heading">Confirme seu voto:</p>
-            
+            <h1 class="cover-heading">Qual o seu voto?</h1>
+            <!-- <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an u.</p> -->
             <p class="lead">
-                <form method="post" action="dConfirmarVoto" >
-                    <input type="hidden" name="numero" class="btn btn-lg vote btn-secondary" value="<%= candidato.getId()  %>">  
-                    <input type="submit" class="btn btn-lg vote btn-secondary" value='Confirmar' /><br><br>
-                </form>
-                <form>
-                    <input type="submit" class="btn btn-lg btn-sm"  value='Voltar' /><br><br>
-                </form>
+                <form method="post" action="dRegistrarVoto">
+                    <input name="dvoto" class="btn btn-lg vote btn-secondary" type="text" />
+                     <input type="submit" class="btn btn-lg vote btn-secondary" value="Votar">
+                 </form>
             </p>
           </div>
+
           <div class="mastfoot">
             <div class="inner">
               <p>© Equipe <a href="http://github.com/franciscowallison">Francisco Wallison</a>, 2017</p>
@@ -85,7 +69,5 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
+  </body>
 </html>
-
-
