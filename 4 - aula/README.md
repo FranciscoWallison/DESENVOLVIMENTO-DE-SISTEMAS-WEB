@@ -218,5 +218,55 @@ create table midia_locacao (
 	data timestamp not null check (data >=   data_devolucao),
 );
 ```
+Atividade dia 30/03 
+```
+CREATE TABLE ramo_atividade (
+cd_ramo INT NOT NULL PRIMARY KEY,
+ds_ramo VARCHAR(100) NOT NULL
+);
+CREATE TABLE tipo_assinante (
+cd_tipo INT NOT NULL PRIMARY KEY,
+ds_tipo VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE assinante (
+cd_assinante INT NOT NULL PRIMARY KEY,
+nm_assinante VARCHAR(100) NOT NULL,
+cd_ramo int references ramo_atividade (cd_ramo)
+  	on delete restrict
+  	on update cascade,
+ cd_tipo int references tipo_assinante (cd_tipo)
+  	on delete restrict
+  	on update cascade
+);
+
+CREATE TABLE municipio (
+cd_municipio INT NOT NULL PRIMARY KEY,
+ds_municipio VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE endereco (
+cd_endereco INT NOT NULL PRIMARY KEY,
+ds_endereco VARCHAR(100) NOT NULL,
+complemtento VARCHAR(100),
+bairro VARCHAR(100) NOT NULL,
+cep VARCHAR(100) NOT NULL,
+cd_assinante int references assinante (cd_assinante)
+  	on delete restrict
+  	on update cascade,
+ cd_municipio int references municipio (cd_municipio)
+  	on delete restrict
+  	on update cascade
+);
+
+CREATE TABLE telefone (
+cd_telefone INT NOT NULL PRIMARY KEY,
+ddd VARCHAR(100) NOT NULL,
+n_fone VARCHAR(100),
+cd_endereco int references endereco (cd_endereco)
+  	on delete restrict
+  	on update cascade
+);
+```
 
 
