@@ -30,27 +30,28 @@
             <div class="inner">
               <h3 class="masthead-brand logo">Vot</h3>
               <nav class="nav nav-masthead">
-                <a class="nav-link active" href="/deleicao/">Home</a>
+                <a class="nav-link " href="/deleicao/">Home</a>
                 <a class="nav-link" href="#">Login</a>
-                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link active" href="#">Register</a>
                 <a class="nav-link" href="aListarCandidatos" >Candidatos</a>
               </nav>
             </div>
           </div>
           <div class="inner cover">
-            <h1 class="cover-heading">Qual o seu voto?</h1>
+            <h1 class="cover-heading">Criar Candidato!</h1>
             <!-- <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an u.</p> -->
             <p class="lead">
-                <form method="post" action="aRegistrarVoto">
-                    <input name="dvoto" class="btn btn-lg vote btn-secondary" type="text" />
-                     <input type="submit" class="btn btn-lg vote btn-secondary" value="Votar">
+                <form method="post" action="aRegistrarCanditado">
+                    <input name="anome" class="btn btn-secondary" placeholder="Nome" type="text" /><br><br>
+                    <input name="aid" class="btn  btn-secondary" placeholder="Numero" type="text" /><br><br>
+                    <input type="submit" class="btn btn-lg btn-secondary" value="Votar">
                  </form>
             </p>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Â© 2017, 
+              <p>© 2017, 
                   Equipe <a href="http://github.com/franciscowallison">Francisco Wallison</a> e 
                    <a href="http://github.com/franciscowallison">Tiago Ferreira</a></p>
             </div>

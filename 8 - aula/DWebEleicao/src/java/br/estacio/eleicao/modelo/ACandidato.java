@@ -68,7 +68,7 @@ public class ACandidato {
         return candidato;
     }
 
-     public static boolean registrarVoto(int id) throws SQLException {
+    public static boolean registrarVoto(int id) throws SQLException {
 
         Connection c = null;
         boolean retorno = false;
@@ -91,14 +91,56 @@ public class ACandidato {
         return retorno;
     }
     
+    public static boolean registrarCandidato(String id, String nome) throws SQLException {
+
+        Connection c = null;
+        boolean retorno = false;
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            c = DriverManager.getConnection(
+                    "jdbc:derby://localhost:1527/vot", "root", "123");
+            c.setAutoCommit(true);
+            c.setSchema("ROOT");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Falta o driver!");
+        }
+
+        if (c != null) {
+            Statement trans = c.createStatement();
+            String query = "INSERT INTO table CANDIDATOS (nome,id)VALUES ("+id+","+nome+")";
+            if (trans.executeUpdate(query) == 1) retorno = true;
+            c.close();
+        }
+        return retorno;
+    }
     
     
-    public static List getCandidatos() {
+    
+    public static List getCandidatos()throws SQLException {
 
         List lista = new ArrayList();
-        for (int i = 0; i < 10; i++) {
-            ACandidato dCandidato = new ACandidato("Candidato" + Integer.toString(i), i,"Candidato" + Integer.toString(i));
-            lista.add(dCandidato);
+        Connection c = null;
+        ACandidato candidato = null;
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            c = DriverManager.getConnection(
+                    "jdbc:derby://localhost:1527/vot","root", "123");
+            c.setAutoCommit(true);
+            c.setSchema("ROOT");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Falta o driver!");
+        }
+
+        if (c != null) {
+            Statement trans = c.createStatement();
+            String query = "SELECT * FROM candidatos";
+            ResultSet res = trans.executeQuery(query);
+
+            if (res.next()) {
+              lista = new ACandidato(res.getString("nome"),res.getString("avatar"));           
+            } 
+            res.close();
+            c.close();
         }
         return lista;
     }

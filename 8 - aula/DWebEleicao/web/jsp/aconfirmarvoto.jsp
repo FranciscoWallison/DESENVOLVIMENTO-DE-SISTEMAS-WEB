@@ -59,7 +59,7 @@
                     <input type="hidden" name="numero" class="btn btn-lg vote btn-secondary" value="<%= candidato.getId()  %>">  
                     <input type="submit" class="btn btn-lg vote btn-secondary" value='Confirmar' /><br><br>
                 </form>
-                <form>
+                <form method="post" action="/deleicao/" >
                     <input type="submit" class="btn btn-lg btn-sm"  value='Voltar' /><br><br>
                 </form>
             </p>

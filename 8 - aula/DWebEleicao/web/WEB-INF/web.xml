@@ -16,6 +16,14 @@
         <servlet-name>AConfirmarVoto</servlet-name>
         <servlet-class>br.estacio.eleicao.servlets.AConfirmarVoto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AcriarCandidato</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.AcriarCandidato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>aRegistrarCanditado</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.aRegistrarCanditado</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ARegistrarVoto</servlet-name>
         <url-pattern>/aRegistrarVoto</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>AConfirmarVoto</servlet-name>
         <url-pattern>/aConfirmarVoto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcriarCandidato</servlet-name>
+        <url-pattern>/AcriarCandidato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>aRegistrarCanditado</servlet-name>
+        <url-pattern>/aRegistrarCanditado</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
