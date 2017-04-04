@@ -42,13 +42,13 @@
             <div class="inner">
               <h3 class="masthead-brand logo">Vot</h3>
               <nav class="nav nav-masthead">
-                <a class="nav-link active" href="index">Home</a>
-                <a class="nav-link" href="#">Login</a>
-                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="/deleicao/">Home</a>
+                <a class="nav-link" href="AcriarCandidato">Register Candidato</a>
                 <a class="nav-link" href="aListarCandidatos" >Candidatos</a>
               </nav>
             </div>
           </div>
+         <% if(candidato.getId() != 0 ){ %>
           <div class="inner cover">
             <h1 class="cover-heading"><%= nomeCandidato %></h1>
             <img class="rounded-circle" src="img/<%= candidato.getAvatar()  %>" alt="Generic placeholder image" width="140" height="140">
@@ -64,6 +64,17 @@
                 </form>
             </p>
           </div>
+           <% }else{ %>
+            <div class="inner cover">
+            <h1 class="cover-heading">Candidato inexistente!</h1>
+            <!-- <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an u.</p> -->
+            <p class="lead">
+                <form action="/deleicao/" >
+                    <input type="submit" class="btn btn-lg btn-sm"  value='Voltar' /><br><br>
+                </form>
+            </p>
+          </div>
+           <% } %>
           <div class="mastfoot">
             <div class="inner">
               <p>© Equipe <a href="http://github.com/franciscowallison">Francisco Wallison</a>, 2017</p>
