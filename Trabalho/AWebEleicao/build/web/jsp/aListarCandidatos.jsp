@@ -1,29 +1,38 @@
+
 <%@page import="br.estacio.eleicao.modelo.ACandidato"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    List<ACandidato> ALista = (List)request.getAttribute("Lista");
+    List<ACandidato> ALista = (List)request.getAttribute("ALista");
     
 %>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-       <table>
-          <% 
-              for (ACandidato candidato:ALista) {
-           %>    
-           <tr>
-               <td><%= candidato.getNome() %></td>
-               <td><%= candidato.getId() %></td>
-           </tr>
-           <% } %>
-          
-       </table>
-    </body>
-</html>
+<%@ include file="/layout/cabecalho.jsp"%>
+          <div class="inner cover">                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Numero</th>
+                            <th>Name</th>
+                            <th>Foto</th>
+                            <th>Votos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% 
+                            for (ACandidato candidato:ALista) {
+                        %>    
+                        <tr>
+                            <th scope="row"><%= candidato.getId() %></th>
+                            <td><%= candidato.getNome() %></td>
+                            <td><%= candidato.getAvatar() %></td>
+                            <td><%= candidato.getVot() %></td>
+                        </tr>
+                        
+                         <% } %>
+                    </tbody>
+                   
+                </table>
+                    
+          </div>
+<%@ include file="/layout/rodape.jsp"%>

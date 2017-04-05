@@ -29,7 +29,7 @@ public class AConfirmarVoto extends HttpServlet {
         try {
             int numero = Integer.parseInt(request.getParameter("numero"));
             ACandidato.registrarVoto(numero);
-            response.sendRedirect("aVotoConfirmado.html");
+            response.sendRedirect("aVotoConfirmado.jsp");
         } catch (SQLException ex) {
             Logger.getLogger(AConfirmarVoto.class.getName()).log(Level.SEVERE, null, ex);
         }

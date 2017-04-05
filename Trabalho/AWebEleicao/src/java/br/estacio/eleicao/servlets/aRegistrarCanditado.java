@@ -16,12 +16,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author daniel
  */
-public class ARegistrarVoto extends HttpServlet {
+public class aRegistrarCanditado extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("erro.jsp");
+        response.sendRedirect("erro.html");
     }
 
     
@@ -30,12 +30,17 @@ public class ARegistrarVoto extends HttpServlet {
             throws ServletException, IOException {
       
         try {
-            String voto = request.getParameter("dvoto");
-            ACandidato cand = ACandidato.getCandidato(Integer.parseInt(voto));
-            request.setAttribute("candidato", cand);
-            
-            RequestDispatcher rd = request.getRequestDispatcher("/aConfirmarVotoJSP");
-            rd.forward(request, response);
+            String anome = request.getParameter("anome");
+            String aid = request.getParameter("aid");
+            boolean creat =  ACandidato.registrarCandidato(Integer.parseInt(aid), anome);
+            if(creat){
+                RequestDispatcher rd = request.getRequestDispatcher("/jsp/aConfirmarCadastro.jsp");
+                 rd.forward(request, response);
+            }else{
+                RequestDispatcher rd = request.getRequestDispatcher("/jsp/aErroCadastro.jsp");
+                 rd.forward(request, response);
+            }
+           
         } catch (SQLException ex) {
             Logger.getLogger(ARegistrarVoto.class.getName()).log(Level.SEVERE, null, ex);
         }
