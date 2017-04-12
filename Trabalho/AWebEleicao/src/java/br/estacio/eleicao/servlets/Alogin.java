@@ -11,10 +11,12 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -53,14 +55,19 @@ public class Alogin extends HttpServlet {
         String email = request.getParameter("aEmail");
         String senha = request.getParameter("aSenha");
         
-        try {
+       
             AUsuario usuario = AUsuario.doLogin(email,senha);
             if(usuario != null){
-                
+                HttpSession session = request.getSession();
+                session.getMaxInactiveInterval(30);
+                session.getAttribute("email",email);
+                response.sendRedirect("index.jsp");
+            }else{
+                request.setAttribute("error", 'usuario ou senha invalida');
+                RequestDispatcher rd = request.getRequestDispatcher('jsp/alogin.jsp');
+                rd.forward(request, response);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(Alogin.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
     }
 
     /**
