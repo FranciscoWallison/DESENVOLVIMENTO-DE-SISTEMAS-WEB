@@ -24,6 +24,10 @@
         <servlet-name>aRegistrarCanditado</servlet-name>
         <servlet-class>br.estacio.eleicao.servlets.aRegistrarCanditado</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ALogin</servlet-name>
+        <servlet-class>br.estacio.eleicao.servlets.Alogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ARegistrarVoto</servlet-name>
         <url-pattern>/aRegistrarVoto</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>aRegistrarCanditado</servlet-name>
         <url-pattern>/aRegistrarCanditado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ALogin</servlet-name>
+        <url-pattern>/aLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

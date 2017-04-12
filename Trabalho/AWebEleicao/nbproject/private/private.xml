@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/src/java/br/estacio/eleicao/servlets/aRegistrarCanditado.java</file>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/src/java/br/estacio/eleicao/modelo/ACandidato.java</file>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/web/index.html</file>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/web/jsp/aconfirmarvoto.jsp</file>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/src/java/br/estacio/eleicao/servlets/AConfirmarVoto.java</file>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/web/jsp/aErroCadastro.jsp</file>
-            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/8%20-%20aula/DWebEleicao/src/java/br/estacio/eleicao/servlets/ARegistrarVoto.java</file>
+            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/Trabalho/AWebEleicao/web/assets/js/jquery-3.1.1.slim.min.js</file>
+            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/Trabalho/AWebEleicao/web/assets/js/ie10-viewport-bug-workaround.js</file>
+            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/Trabalho/AWebEleicao/web/assets/js/tether.min.js</file>
+            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/Trabalho/AWebEleicao/web/jsp/aListarCandidatos.jsp</file>
+            <file>file:/C:/DESENVOLVIMENTO-DE-SISTEMAS-WEB/Trabalho/AWebEleicao/web/layout/rodape.jsp</file>
         </group>
     </open-files>
 </project-private>
