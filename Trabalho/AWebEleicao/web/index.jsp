@@ -1,3 +1,4 @@
+
 <%@ include file="/layout/cabecalho.jsp"%>
           <div class="inner cover">
             <h1 class="cover-heading">Qual o seu voto?</h1>
@@ -9,4 +10,5 @@
                  </form>
             </p>
           </div>
+
 <%@ include file="/layout/rodape.jsp"%>

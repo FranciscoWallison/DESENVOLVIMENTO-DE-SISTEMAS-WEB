@@ -53,20 +53,27 @@ public class Alogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("aEmail");
-        String senha = request.getParameter("aSenha");
+        String senha = request.getParameter("aPassword");
         
        
-            AUsuario usuario = AUsuario.doLogin(email,senha);
-            if(usuario != null){
-                HttpSession session = request.getSession();
-                session.getMaxInactiveInterval(30);
-                session.getAttribute("email",email);
-                response.sendRedirect("index.jsp");
-            }else{
-                request.setAttribute("error", 'usuario ou senha invalida');
-                RequestDispatcher rd = request.getRequestDispatcher('jsp/alogin.jsp');
-                rd.forward(request, response);
+            AUsuario usuario;
+            try {
+                usuario = AUsuario.doLogin(email,senha);
+                if(usuario != null){
+                    HttpSession session = request.getSession();
+                    session.setMaxInactiveInterval(30);
+                    session.setAttribute("email",email);
+                    response.sendRedirect("index.jsp");
+                }else{
+                    request.setAttribute("error","usuario ou senha invalida");//object
+                    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+                    rd.forward(request, response);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Alogin.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            
        
     }
 

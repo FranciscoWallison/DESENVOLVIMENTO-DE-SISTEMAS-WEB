@@ -67,11 +67,11 @@ public class AUsuario {
         if (c != null) {
             Statement trans = c.createStatement();
             String query = "SELECT * FROM users WHERE email = '"
-                    + email + " and senha = '"+senha+"'";
+                    + email + "' and password = '"+senha+"'";
             ResultSet res = trans.executeQuery(query);
 
             if (res.next()) {
-              user = new AUsuario(res.getString("email"),null,res.getString("nome"));                
+              user = new AUsuario(res.getString("email"),null,res.getString("name"));                
             }else{
                user = new AUsuario("Existe","Existe","Existe");
             }
