@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sistema Consulta Alunos</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    <head>
+    <h4>Centro Universitário Estácio do Ceará - Moreira Campos<br>
+        Curso: Desenvolvimento de Sistemas Web<br>
+        Disciplina: Sistemas de Informação<br>
+        Professor: Daniel Martins
+    </h4>
+    <h3> <a href="index.jsp">  Acesso à aplicação </a> </h3>
+</head>
+
+<article>
+    <h3>Atividade Extra</h3>
+    <br>
+    Esta avaliação é composta de 3 Questões.            <br>
+
+    Cada questão certa corresponderá a 1 score. Totalizando o máximo de 3 scores.            <br>
+
+    Não existe atribuição de 0,5 score. O aluno deve acertar toda a questão para
+
+    receber o score, caso contrário, será atribuído zero na questão.          <br>
+
+    Utilize o slides das aulas, exemplos das aulas como referência de consulta.
+    <br> <br>
+
+
+    A nota final de AV1 será dada pelo cálculo:          <br>
+
+    AV1 = AV1 + (10 - AV1)/10*(Scores obtidos)          <br>          <br>
+
+    <section>
+        <h3>1ª Questão:</h3>
+        A aplicação inicia com uma página de login, na qual o usuário deve informar matrícula e senha.<br>
+        Na definição do formulário, na página index.jsp, é prevista a utilização da função validaSenha() <br>        
+        <font color="red">( &lt;form action="acesso.fic" method="post" onsubmit="return validaSenha();" &gt;</font>
+        ). <br>
+        O objetivo desta função é controlar a submissão do formulário, o qual só será submetido ao servidor
+        se o retorno for "true"<br><br>
+
+        A aplicação já está chamando corretamente a função, porém ela não está definida.<br>
+        <u>Defina e implemente a função validaSenha, a qual deve:</u><br> 
+        <ul>
+            <li>Caso a senha seja numérica <br>
+                - retornar o boolean true<br></li>
+            <li>Caso a senha não seja numérica <br>
+                - gerar um alerta com a informação: "A senha deve ser numérica!"; e<br>
+                - retornar o boolean false
+            </li>
+        </ul>
+        <br>
+        <u>Descubra qual é a senha correta</u><br>
+        <ul>
+            <li>Consulte a Internet para "desvendar" o <em>hash</em> que você encontrou</li>
+        </ul>
+        <br>
+        Não esqueça de testar o código para verificar o cumprimento dos quesitos.
+    </section>
+    <br><br>
+    <section>
+        <h3>2ª Questão:</h3>
+        Após a autenticação, o usuário é redirecionado para uma página com alguns formulários.<br>
+        Dentre os formulários há 1(um) que corresponde a uma consulta de alunos por nome.<br><br>
+        Faça com que, na resposta do servidor ao clique do botão "Obter alunos por nome", 
+        além da tabela com a listagem dos alunos que correspondem a pesquisa (código já implementado)
+        <u>seja apresentado um alerta com a quantidade de alunos retornados na referida consulta</u>
+        <br><br> 
+        Não esqueça de testar o código para verificar o cumprimento dos quesitos.
+    </section>
+    <br><br>
+    <section>
+        <h3>3ª Questão:</h3>
+        O último <em>button</em> deve retornar uma listagem completa dos alunos.<br>
+        Esta implementação <b>não</b> está funcionando.<br>
+        O formulário na página chama a URL "lista.fic" que deve ser tratada no ServletControlador.<br>
+        Para responder a esta requisição a aplicação deverá chamar o método <em>getTodosAlunos()</em>
+        da classe DAO responsável pelas operações de banco de dados dos Alunos.<br>
+        Após isso, deverá <em>setar</em> o retorno do método como atributo na requisição e encaminhá-la
+        para o arquivo /jsp/listagemcompleta.jsp.<br>
+        Estude e analise o código fonte para implementar corretamente esta funcionalidade.<br><br>
+        O arquivo listagemcompleta.jsp <b>não</b> deve ser alterado.<br>
+        A página pesquisa.jsp <b>não</b> deve ser alterada.<br>
+        <u>As únicas alterações devem ser feitas na classe ServletControlador.</u>
+
+        <br><br> 
+        Não esqueça de testar o código para verificar o cumprimento dos quesitos.
+    </section>
+</article>
+<br>
+<footer>
+    <h3> <a href="index.jsp">  Acesso à aplicação </a> </h3>
+</footer>
+</body>
+</html>

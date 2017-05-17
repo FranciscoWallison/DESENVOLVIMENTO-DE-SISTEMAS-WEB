@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title> Calcular Media</title>
+		<h2> Calculo da Media entre Dois Números </h2>
+		<script language="javascript">
+			function calcular(){
+				var a = parseInt(document.formulario.a.value); 
+				var b = parseInt(document.formulario.b.value);
+				var m = (a + b)/2;
+				document.formulario.resultado.value = m;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="formulario">
+			A  <input type="text" size="10" name="a"> <br> 
+			B  <input type="text" size="10" name="b"><br>
+			<input type="button" value='Media' onclick="calcular()"> <br>
+			R <input type="text" size="10" name="resultado" disabled>
+		</form>
+	</body>
+</html>
