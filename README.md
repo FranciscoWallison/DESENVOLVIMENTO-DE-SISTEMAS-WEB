@@ -17,7 +17,7 @@
 
 
 ## Pense assim, a linguagem SQL é uma só, porém ela é dividida em tipos de acordo com a funcionalidade dos comandos.
-# Os tipos da linguagem SQL são:
+# [Os tipos da linguagem SQL são:](https://pt.stackoverflow.com/questions/262867/o-que-s%C3%A3o-as-siglas-ddl-dml-dql-dtl-e-dcl)  
 ```
 DDL - Data Definition Language - Linguagem de Definição de Dados.
 São os comandos que interagem com os objetos do banco.
