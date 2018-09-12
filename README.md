@@ -46,3 +46,12 @@ São os comandos para controlar a parte de segurança do banco de dados.
 ```
 São comandos DCL : GRANT, REVOKE E DENY.
 ```
+
+
+## Git trocar url
+git remote rename origin old_origin
+git remote add origin https://franciscowallison....
+
+## Git commit prod
+git reset --hard
+git pull origin master -f
