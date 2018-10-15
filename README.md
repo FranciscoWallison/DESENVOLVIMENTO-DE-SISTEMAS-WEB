@@ -63,7 +63,7 @@ git pull origin master -f .
 ## Motivos para usar Microserviços
 ```
 Aplicação descentralizada
-Euipes trabalnhando simultaneamene
+Equipes trabalhando simultaneamente
 Ferramenta certa para cada serviço
 Recontrução de codigo mais rápido (se necessário)
 Manutenção facilitada
