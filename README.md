@@ -47,6 +47,19 @@ São os comandos para controlar a parte de segurança do banco de dados.
 São comandos DCL : GRANT, REVOKE E DENY.
 ```
 
+## Conect banco  MySQL
+```
+mysql -u root -p suasenha
+``` 
+## Ler aquivo sql
+```
+source nomedoseuarquivo.sql <enter>
+```
+## Config mysql 
+``` 
+SHOW PROCESSLIST;
+KILL {id};
+```
 
 ## Git trocar url
 ```
