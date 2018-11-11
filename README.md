@@ -71,7 +71,11 @@ git remote add origin https://franciscowallison....
 git reset --hard .
 git pull origin master -f .
 ```
-
+## Git edit commit
+```
+git commit --amend
+git rebase --continue
+```
 
 ## Motivos para usar Microserviços
 ```
