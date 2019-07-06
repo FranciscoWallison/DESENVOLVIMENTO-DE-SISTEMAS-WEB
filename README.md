@@ -51,6 +51,11 @@ São comandos DCL : GRANT, REVOKE E DENY.
 ```
 mysql -u root -p suasenha
 ``` 
+## Mostrar DB's
+```
+show databases;
+```
+
 ## Ler aquivo sql
 ```
 source nomedoseuarquivo.sql <enter>
@@ -59,6 +64,7 @@ source nomedoseuarquivo.sql <enter>
 ``` 
 SHOW PROCESSLIST;
 KILL {id};
+alter table CLIENTE convert to character set utf8 collate utf8_general_ci
 ```
 
 ## Git trocar url
