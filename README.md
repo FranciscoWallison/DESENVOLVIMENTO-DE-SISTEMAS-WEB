@@ -21,31 +21,35 @@
 ```
 DDL - Data Definition Language - Linguagem de Definição de Dados.
 São os comandos que interagem com os objetos do banco.
-```
-```
+
 São comandos DDL : CREATE, ALTER e DROP
+```
+```
 DML - Data Manipulation Language - Linguagem de Manipulação de Dados.
 São os comandos que interagem com os dados dentro das tabelas.
-```
-```
+
 São comandos DML : INSERT, DELETE e UPDATE
+```
+```
 DQL - Data Query Language - Linguagem de Consulta de dados.
 São os comandos de consulta.
-```
-```
-São comandos DQL : SELECT (é o comando de consulta)
+
+São comandos DQL : SELECT (é o comando de consulta) 
 Aqui cabe um parenteses. Em alguns livros o SELECT fica na DML em outros tem esse grupo próprio.
+```
+```
 DTL - Data Transaction Language - LInguage de Transação de Dados.
 São os comandos para controle de transação.
-```
-```
+
 São comandos DTL : BEGIN TRANSACTION, COMMIT E ROLLBACK
+```
+```
 DCL - Data Control Language - Linguagem de Controle de Dados.
 São os comandos para controlar a parte de segurança do banco de dados.
-```
-```
+
 São comandos DCL : GRANT, REVOKE E DENY.
 ```
+
 
 ## Conect banco  MySQL
 ```
