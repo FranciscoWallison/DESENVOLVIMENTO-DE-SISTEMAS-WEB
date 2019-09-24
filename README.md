@@ -93,21 +93,21 @@ Manutenção facilitada
 Escalabilidade aprimorada
 ``` 
 
-## Motivos para usar DDD do livro: [Domain-Driven Design in PHP:](https://books.google.com.br/books/about/Domain_Driven_Design_in_PHP.html?id=4nc5DwAAQBAJ&source=kp_cover&redir_esc=y)  
+## Motivos para usar DDD do livro: [Domain-Driven Design in PHP](https://books.google.com.br/books/about/Domain_Driven_Design_in_PHP.html?id=4nc5DwAAQBAJ&source=kp_cover&redir_esc=y)  
 ```
- O software não deve apenas fazer sentido para os codificadores, mas também para os negócios. DDD simpatiza
-certificando-se de que os negócios e o software falem o mesmo idioma.
+• O software não deve apenas fazer sentido para os codificadores, mas também para os negócios. 
+DDD simpatiza certificando-se de que os negócios e o software falem o mesmo idioma.
 • As prioridades de software estão alinhadas com as prioridades de negócios.
 • Com o DDD, todos aprendem e contribuem para descobrir o domínio comercial.
-• O conhecimento não pertence mais apenas aos desenvolvedores, com o DDD todos sabem o que está acontecendo
-com o negócio.
+• O conhecimento não pertence mais apenas aos desenvolvedores, com o DDD todos sabem o que 
+está acontecendo com o negócio.
 • Não há traduções entre especialistas em domínios, o que significa perda de informações ou tédio
 sincronizando. Todo mundo fala o mesmo idioma.
 • O design é o código e o código é o design, a única verdade implementada para o comum
 língua. Focado na entrega de software continuamente por meio de processos ágeis de descoberta.
 • DDD fornece uma estrutura para design estratégico e tático. Estratégico para identificar o ponto mais
-áreas importantes a serem desenvolvidas com base no valor comercial e táticas sobre construções testadas em batalha
-blocos e padrões.
+áreas importantes a serem desenvolvidas com base no valor comercial e táticas sobre 
+construções testadas em batalha blocos e padrões.
 ```
 
 
